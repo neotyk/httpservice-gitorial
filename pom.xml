@@ -71,7 +71,10 @@
             <Import-Package>*</Import-Package>
             <Import-Service>org.osgi.service.http.HttpService</Import-Service>
             <Private-Package>pl.kungfoo.grizzly.osgi.httpservice.gitorial.impl</Private-Package>
-            <Bundle-Activator>pl.kungfoo.grizzly.osgi.httpservice.gitorial.impl.Activator</Bundle-Activator>
+            <Service-Component>
+              pl.kungfoo.grizzly.osgi.httpservice.gitorial.impl.RegisterServletComponent;
+              http=org.osgi.service.http.HttpService
+            </Service-Component>
           </instructions>
         </configuration>
       </plugin>
@@ -98,6 +101,12 @@
       <groupId>com.sun.grizzly.osgi</groupId>
       <artifactId>grizzly-httpservice-bundle</artifactId>
       <version>${grizzly.version}</version>
+    </dependency>
+    <!-- Felix Declarative Service -->
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.scr</artifactId>
+      <version>1.0.6</version>
     </dependency>
   </dependencies>
 
