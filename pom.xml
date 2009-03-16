@@ -32,6 +32,7 @@
   <!-- Project proprties -->
   <properties>
     <grizzly.version>1.9.9-SNAPSHOT</grizzly.version>
+    <pax.version>1.4</pax.version>
     <felix-bundle.version>2.0.0</felix-bundle.version>
   </properties>
 
@@ -44,6 +45,17 @@
         <configuration>
           <source>5</source>
           <target>5</target>
+        </configuration>
+      </plugin>
+
+      <!-- PAX provision -->
+      <plugin>
+        <groupId>org.ops4j</groupId>
+        <artifactId>maven-pax-plugin</artifactId>
+        <version>${pax.version}</version>
+        <configuration>
+          <profiles>log</profiles>
+          <framework>felix</framework>
         </configuration>
       </plugin>
 
@@ -96,5 +108,13 @@
       <url>http://download.java.net/maven/2/</url>
       <layout>default</layout>
     </repository>
+    <!-- PAX repository -->
+    <repository>
+      <id>ops4j.releases</id>
+      <url>http://repository.ops4j.org/maven2/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository> 
   </repositories>
 </project>
