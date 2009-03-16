@@ -9,6 +9,7 @@ public class RegisterServletComponent {
 
     public void setHttp(HttpService http) throws ServletException, NamespaceException {
         http.registerServlet("/hello", new RegisterServlet(), null, null);
+        http.registerResources("/", "", null);
     }
 }
 
