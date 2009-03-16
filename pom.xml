@@ -34,6 +34,7 @@
     <grizzly.version>1.9.9-SNAPSHOT</grizzly.version>
     <pax.version>1.4</pax.version>
     <felix-bundle.version>2.0.0</felix-bundle.version>
+    <org.osgi.service.http.port>8080</org.osgi.service.http.port>
   </properties>
 
   <build>
@@ -115,6 +116,6 @@
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-    </repository> 
+    </repository>
   </repositories>
 </project>
